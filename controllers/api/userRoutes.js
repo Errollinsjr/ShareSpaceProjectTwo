@@ -83,6 +83,13 @@ router.post('/createIdea', async (req, res) => {
         console.log('#####################');
         console.log(req.session.user_id);
 
+        //check youtube / giph links are *embed*
+        if (req.body.linkName.includes('youtube') || req.body.linkName.includes('giph')) {
+            if(!req.body.linkName.includes('embed')) {
+                res.status(400).json({ message: 'Youtube and Giph links must be *embed*.  Check URL and try again.'})
+            }
+        }
+
         //otherwise create new user
         await Idea.create({
             idea_name: req.body.inputtedIdea,
