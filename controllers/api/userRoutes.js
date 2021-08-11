@@ -52,6 +52,7 @@ router.post('/create', async (req, res) => {
         //if found, return error 409 - conflict
         if(emailData) {
             res.status(409).json({ message: 'Email aldready exists. Please try logging in or select a new email address.'})
+            return;
         }
         //otherwise create new user
         await User.create({
@@ -87,6 +88,7 @@ router.post('/createIdea', async (req, res) => {
         if (req.body.linkName.includes('youtube') || req.body.linkName.includes('giph')) {
             if(!req.body.linkName.includes('embed')) {
                 res.status(400).json({ message: 'Youtube and Giph links must be *embed*.  Check URL and try again.'})
+                return;
             }
         }
 
