@@ -3,7 +3,11 @@ const moment = require('moment');
 module.exports = {
     link_jpg: (link) => {
         const string=link;
-        return string.includes('jpg');
+        if (string.includes('giphy') || string.includes('youtube')) {
+            return false;
+        } else {
+            return true;
+        }
     },
 
     link_giphy: (link) => {
