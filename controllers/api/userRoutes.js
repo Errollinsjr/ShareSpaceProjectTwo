@@ -52,6 +52,7 @@ router.post('/create', async (req, res) => {
         //if found, return error 409 - conflict
         if(emailData) {
             res.status(409).json({ message: 'Email aldready exists. Please try logging in or select a new email address.'})
+            return;
         }
         //otherwise create new user
         await User.create({
@@ -79,9 +80,23 @@ router.post('/createIdea', async (req, res) => {
         if (ideaData) {
             res.status(400).json({ message: 'Idea already exists.  Please try another'})
             return;
-        }
+        };
         console.log('#####################');
         console.log(req.session.user_id);
+
+        //check link is a secure link
+        if (!req.body.linkName.includes('https')) {
+            res.status(400).json({message: 'Link must be secure.  Try again with link starting https://'});
+            return;
+        };
+        
+        //check youtube / giph links are *embed*
+        if (req.body.linkName.includes('youtube') || req.body.linkName.includes('giph')) {
+            if(!req.body.linkName.includes('embed')) {
+                res.status(400).json({ message: 'Youtube and Giph links must be *embed*.  Check URL and try again.'})
+                return;
+            };
+        };
 
         //otherwise create new user
         await Idea.create({
