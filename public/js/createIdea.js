@@ -17,7 +17,11 @@ if (inputtedIdea && linkName && description && categoryChoice) {
             headers: { 'Content-Type': 'application/json' },
         });
         
-        if (response.ok) {
+        if (response.status === 400) {
+            response.json().then(data => {
+            alert(data.message);
+            });
+        } else if (response.ok) {
             document.location.replace(`/categories/${categoryChoice}`);
             alert('Success!')
         } 
