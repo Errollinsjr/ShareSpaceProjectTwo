@@ -1,0 +1,57 @@
+<!--Create Idea page-->
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create An Idea</h3></div>
+                                    <div class="card-body">
+                                        <form id="ideaForm">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" id="inputIdea" type="text" placeholder="Enter your idea" />
+                                                        <label for="inputIdea">Idea Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <select class="category-select" id="chooseCategory">
+                                                            <option value="None">Choose Category</option>
+                                                            <option value="1">Movies</option>
+                                                            <option value="2">Memes</option>
+                                                            <option value="3">Food and Drinks</option>
+                                                            <option value="4">Art</option>
+                                                            <option value="5">Politics</option>
+                                                            <option value="6">Workout</option>
+                                                            <option value="7">Travel</option>
+                                                            <option value="8">Music</option>
+                                                            <option value="9">Sports</option>
+                                                            <option value="10">Family Friendly</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="inputLink" type="input" placeholder="name@example.com" />
+                                                <label for="inputLink">Link</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="inputDescription" type="input" placeholder="name@example.com" />
+                                                <label for="inputDescription">Description</label>
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid"><a class="btn btn-primary btn-block" type="submit" id="ideaBtn">Post Idea</a></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="card-footer text-center py-3">
+                                        <div class="small"><a href="/">Home</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+        <script src="/js/createIdea.js"></script>
