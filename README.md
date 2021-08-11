@@ -13,8 +13,19 @@ The user's profile includes a placeholder profile pic, space for the user to pro
 
 Link to live application: [ShareSp@ce](https://evening-sea-74828.herokuapp.com/)
 
+## User Story
+
+```
+AS A user
+I WANT to be able to upload  pictures, videos, and GIFS to one place
+SO THAT I can keep track of my favorite links on the internet.
+```
+
 
 ## Mock-Up
+The following shows the websites functionality: 
+
+![Sharesp@ce](public/images/Untitled_%20Aug%2011,%202021%205_58%20PM.gif)
 
 
 
